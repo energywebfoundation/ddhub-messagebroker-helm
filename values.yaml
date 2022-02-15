@@ -20,7 +20,20 @@ messagebroker:
     mbDid: "did:ethr:0x5aEa5Bf5c5b341A0BF30Cc5b51b77Fb9807F1b52"
     # -- (optional string, default https://ddhub-test.energyweb.org matching ingress) jwt token issuer
     jwt_issuer: "https://ddhub-test.energyweb.org"
-
+    # -- (optional string, default file) the container name for uploaded files in blob storage
+    blob_storage_container: "file"
+    # -- (optional string, default https://ddhub-test.energyweb.org) the ddhub server url
+    context_url: "https://ddhub-test.energyweb.org"
+    # -- (optional string, default file) the container name for uploaded files in blob storage
+    mongodb_pool_size_max: 10
+    # -- (optional string, default file) the container name for uploaded files in blob storage
+    mongodb_pool_size_min: 5
+    # -- (optional string, default original) the swagger UI theme
+    swagger_theme: "original"
+    # -- (optional string, default file) the swagger UI page title
+    swagger_title: "DDHub Message Broker"
+    # -- (optional string, default 122880k) the http request body max limit
+    http_body_size_max: "122880k"
 
 image:
   # repository: 098061033856.dkr.ecr.us-east-1.amazonaws.com/ew-dos-dsb-ecr

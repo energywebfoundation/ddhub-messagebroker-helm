@@ -1,6 +1,6 @@
 # ddhub-messagebroker
 
-![Version: 1.0.2](https://img.shields.io/badge/Version-1.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.0](https://img.shields.io/badge/AppVersion-0.3.0-informational?style=flat-square)
+![Version: 1.0.3](https://img.shields.io/badge/Version-1.0.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.0](https://img.shields.io/badge/AppVersion-0.3.0-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 
@@ -26,11 +26,18 @@ A Helm chart for Kubernetes
 | ingress.hosts[0].paths[0].path | string | `"/"` |  |
 | ingress.hosts[0].paths[0].pathType | string | `"Prefix"` |  |
 | ingress.tls | list | `[]` |  |
+| messagebroker.config.blob_storage_container | string | `"file"` | (optional string, default file) the container name for uploaded files in blob storage |
 | messagebroker.config.cacheServerUrl | string | `"https://identitycache-staging.energyweb.org/v1"` | (optional string, default https://identitycache-dev.energyweb.org/) An URL to Identity Cache server, more info https://github.com/energywebfoundation/iam-cache-server |
+| messagebroker.config.context_url | string | `"https://ddhub-test.energyweb.org"` | (optional string, default https://ddhub-test.energyweb.org) the ddhub server url |
+| messagebroker.config.http_body_size_max | string | `"122880k"` | (optional string, default 122880k) the http request body max limit |
 | messagebroker.config.jwt_issuer | string | `"https://ddhub-test.energyweb.org"` | (optional string, default https://ddhub-test.energyweb.org matching ingress) jwt token issuer |
 | messagebroker.config.mbDid | string | `"did:ethr:0x5aEa5Bf5c5b341A0BF30Cc5b51b77Fb9807F1b52"` | (required string) it is the DID identifier corresponding to the PRIVATE_KEY |
+| messagebroker.config.mongodb_pool_size_max | int | `10` | (optional string, default file) the container name for uploaded files in blob storage |
+| messagebroker.config.mongodb_pool_size_min | int | `5` | (optional string, default file) the container name for uploaded files in blob storage |
 | messagebroker.config.natsClusterUrl | string | `"nats://dsb-nats.nats.svc:4222"` | NATS Jetstream node url |
 | messagebroker.config.port | int | `9000` | (optional int, default 3000) Port number to be used by DSB Message Broker to listen to |
+| messagebroker.config.swagger_theme | string | `"original"` | (optional string, default original) the swagger UI theme |
+| messagebroker.config.swagger_title | string | `"DDHub Message Broker"` | (optional string, default file) the swagger UI page title |
 | messagebroker.config.webUrl | string | `"https://volta-rpc.energyweb.org/"` | (optional string, default https://volta-rpc.energyweb.org/) An URL to EW blockchain node (default |
 | messagebroker.config.withSwagger | string | `"true"` | (optional bool, default true) Boolean that enables or disables hosting Swagger API documentation alongside DSB Message Broker endpoints, if true then http://{URL}:{PORT}/swagger is available |
 | nameOverride | string | `"ddhub-messagebroker"` |  |

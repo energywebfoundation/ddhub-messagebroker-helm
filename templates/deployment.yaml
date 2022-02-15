@@ -66,6 +66,16 @@ spec:
                 secretKeyRef:
                   name: {{ include "messagebroker.fullname" . }}-secret
                   key: mongoConnectString
+            - name: BLOB_STORAGE_ACCOUNT_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "messagebroker.fullname" . }}-secret
+                  key: blobStorageAccount
+            - name: BLOB_STORAGE_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "messagebroker.fullname" . }}-secret
+                  key: blobStorageKey
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

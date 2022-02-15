@@ -12,3 +12,10 @@ data:
   CACHE_SERVER_URL: {{ .Values.messagebroker.config.cacheServerUrl | default "https://identitycache-dev.energyweb.org/" | quote }}
   MB_DID: {{ .Values.messagebroker.config.mbDid | quote }}
   JWT_ISSUER: {{ .Values.messagebroker.config.jwt_issuer | quote }}
+  BLOB_CONTAINER_NAME: {{ .Values.messagebroker.config.blob_storage_container | quote }}
+  DDHUB_CONTEXT_URL: {{ .Values.messagebroker.config.context_url | quote }}
+  MONGODB_POOL_SIZE_MAX: {{ .Values.messagebroker.config.mongodb_pool_size_max | quote }}
+  MONGODB_POOL_SIZE_MIN: {{ .Values.messagebroker.config.mongodb_pool_size_min | quote }}
+  SWAGGER_THEME: {{ .Values.messagebroker.config.swagger_theme | quote }}
+  SWAGGER_title: {{ .Values.messagebroker.config.swagger_title | quote }}
+  HTTP_BODY_SIZE_MAX: {{ .Values.messagebroker.config.http_body_size_max | quote }}

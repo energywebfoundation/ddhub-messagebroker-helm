@@ -119,4 +119,4 @@ tolerations: []
 affinity: {}
 
 did-auth-proxy-helm:
-  enabled:false
+  enabled: false

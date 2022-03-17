@@ -1,0 +1,6 @@
+dependencies:
+- name: did-auth-proxy-helm
+  repository: https://aemoprivatecontainerregistry.azurecr.io/helm/v1/repo
+  version: 0.0.11
+digest: sha256:18d3d3a7bcf6427f002c6f3fb25e1bffbd30834b9a83971c0a5089f89fa70e6e
+generated: "2022-03-18T11:46:35.440079+13:00"

@@ -117,3 +117,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+did-auth-proxy-helm:
+  enabled: false

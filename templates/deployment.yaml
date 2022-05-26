@@ -50,32 +50,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: {{ include "messagebroker.fullname" . }}-configmap
-          env:
-            - name: PRIVATE_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "messagebroker.fullname" . }}-secret
-                  key: privateKey
-            - name: JWT_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "messagebroker.fullname" . }}-secret
-                  key: jwtSecret
-            - name: MONGODB_CONNECTION_STRING
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "messagebroker.fullname" . }}-secret
-                  key: mongoConnectString
-            - name: BLOB_STORAGE_ACCOUNT_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "messagebroker.fullname" . }}-secret
-                  key: blobStorageAccount
-            - name: BLOB_STORAGE_ACCESS_KEY
-              valueFrom:
-                secretKeyRef:
-                  name: {{ include "messagebroker.fullname" . }}-secret
-                  key: blobStorageKey
+            - secretRef:
+                name: {{ include "messagebroker.fullname" . }}-secret
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

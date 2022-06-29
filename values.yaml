@@ -44,8 +44,8 @@ image:
   tag: canary
 
 imagePullSecrets: []
-nameOverride: "ddhub-messagebroker"
-fullnameOverride: "ddhub-messagebroker"
+nameOverride: "ddhub-messagebroker-test"
+fullnameOverride: "ddhub-messagebroker-test"
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -117,6 +117,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-did-auth-proxy-helm:
-  enabled: false

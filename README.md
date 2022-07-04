@@ -1,14 +1,10 @@
 # ddhub-messagebroker
 
-![Version: 1.1.3](https://img.shields.io/badge/Version-1.1.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.0](https://img.shields.io/badge/AppVersion-0.3.0-informational?style=flat-square)
+![Version: 1.2.0](https://img.shields.io/badge/Version-1.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.0](https://img.shields.io/badge/AppVersion-0.3.0-informational?style=flat-square)
 
 A Helm chart for Kubernetes
-
-## Requirements
-
-| Repository | Name | Version |
-|------------|------|---------|
-| https://aemoprivatecontainerregistry.azurecr.io/helm/v1/repo | did-auth-proxy-helm | 0.0.11 |
+## Introduction
+This is a repository with helm chart for DDhub-messagebroker. For more information about DDhub messagebroker please check the [repository](https://github.com/energywebfoundation/ddhub-message-broker).
 
 ## Values
 
@@ -19,8 +15,7 @@ A Helm chart for Kubernetes
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
-| did-auth-proxy-helm.enabled | bool | `false` |  |
-| fullnameOverride | string | `"ddhub-messagebroker"` |  |
+| fullnameOverride | string | `"ddhub-messagebroker-test"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"aemoprivatecontainerregistry.azurecr.io/ddhub-messagebroker"` |  |
 | image.tag | string | `"canary"` |  |
@@ -47,7 +42,7 @@ A Helm chart for Kubernetes
 | messagebroker.config.swagger_title | string | `"DDHub Message Broker"` | (optional string, default file) the swagger UI page title |
 | messagebroker.config.webUrl | string | `"https://volta-rpc.energyweb.org/"` | (optional string, default https://volta-rpc.energyweb.org/) An URL to EW blockchain node (default |
 | messagebroker.config.withSwagger | string | `"true"` | (optional bool, default true) Boolean that enables or disables hosting Swagger API documentation alongside DSB Message Broker endpoints, if true then http://{URL}:{PORT}/swagger is available |
-| nameOverride | string | `"ddhub-messagebroker"` |  |
+| nameOverride | string | `"ddhub-messagebroker-test"` |  |
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |

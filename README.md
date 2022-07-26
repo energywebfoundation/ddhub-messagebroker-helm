@@ -1,6 +1,6 @@
 # ddhub-messagebroker
 
-![Version: 1.2.0](https://img.shields.io/badge/Version-1.2.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.0](https://img.shields.io/badge/AppVersion-0.3.0-informational?style=flat-square)
+![Version: 1.3.0](https://img.shields.io/badge/Version-1.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.0](https://img.shields.io/badge/AppVersion-0.3.0-informational?style=flat-square)
 
 A Helm chart for Kubernetes
 ## Introduction
@@ -15,6 +15,9 @@ This is a repository with helm chart for DDhub-messagebroker. For more informati
 | autoscaling.maxReplicas | int | `100` |  |
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| existingClaim.claimName | string | `"my-claim"` |  |
+| existingClaim.enabled | bool | `false` |  |
+| existingClaim.mountPath | string | `"/mnt/claim"` |  |
 | fullnameOverride | string | `"ddhub-messagebroker-test"` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"aemoprivatecontainerregistry.azurecr.io/ddhub-messagebroker"` |  |
@@ -46,8 +49,15 @@ This is a repository with helm chart for DDhub-messagebroker. For more informati
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
+| pvc.accessMode | string | `"ReadWriteOnce"` |  |
+| pvc.capacity | string | `"1Gi"` |  |
+| pvc.enabled | bool | `false` |  |
+| pvc.mountPath | string | `"/mnt/azure"` |  |
+| pvc.storageClassName | string | `"default"` |  |
 | replicaCount | int | `1` |  |
 | resources | object | `{}` |  |
+| secretProviderClass.enabled | bool | `false` |  |
+| secretProviderClass.name | string | `"my-provider"` |  |
 | securityContext | object | `{}` |  |
 | service.port | int | `80` |  |
 | service.type | string | `"LoadBalancer"` |  |

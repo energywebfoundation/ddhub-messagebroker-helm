@@ -41,17 +41,22 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           livenessProbe:
             httpGet:
-              path: /
+              path: /health
               port: http
           readinessProbe:
             httpGet:
-              path: /
+              path: /health
               port: http
           envFrom:
             - configMapRef:
                 name: {{ include "messagebroker.fullname" . }}-configmap
+            {{- if (.Values.sealedSecret.enabled) }}
+            - secretRef:
+                name: {{ include "messagebroker.fullname" . }}-sealedsecret
+            {{- else }}
             - secretRef:
                 name: {{ include "messagebroker.fullname" . }}-secret
+            {{- end }}
             {{- if and .Values.secretProviderClass.enabled .Values.secretProviderClass.secretName}}
             - secretRef:
                 name: {{ .Values.secretProviderClass.secretName | quote }}

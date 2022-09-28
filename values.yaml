@@ -10,16 +10,6 @@ messagebroker:
     port: 9000
     # -- NATS Jetstream node url
     natsClusterUrl: nats://dsb-nats.nats.svc:4222
-    # -- (optional bool, default true) Boolean that enables or disables hosting Swagger API documentation alongside DSB Message Broker endpoints, if true then http://{URL}:{PORT}/swagger is available
-    withSwagger: "true"
-    # -- (optional string, default https://volta-rpc.energyweb.org/) An URL to EW blockchain node (default
-    webUrl: https://volta-rpc.energyweb.org/
-    # -- (optional string, default https://identitycache-dev.energyweb.org/) An URL to Identity Cache server, more info https://github.com/energywebfoundation/iam-cache-server
-    cacheServerUrl: https://identitycache-staging.energyweb.org/v1
-    # -- (required string) it is the DID identifier corresponding to the PRIVATE_KEY
-    mbDid: "did:ethr:0x5aEa5Bf5c5b341A0BF30Cc5b51b77Fb9807F1b52"
-    # -- (optional string, default https://ddhub-test.energyweb.org matching ingress) jwt token issuer
-    jwt_issuer: "https://ddhub-test.energyweb.org"
     # -- (optional string, default file) the container name for uploaded files in blob storage
     blob_storage_container: "file"
     # -- (optional string, default https://ddhub-test.energyweb.org) the ddhub server url

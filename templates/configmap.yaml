@@ -7,11 +7,6 @@ metadata:
 data:
   PORT: {{ .Values.messagebroker.config.port | default "9000" | quote }}
   NATS_JS_URL: {{ .Values.messagebroker.config.natsClusterUrl | quote }}
-  WITH_SWAGGER: {{ .Values.messagebroker.config.withSwagger | default "true" | quote }}
-  WEB3_URL: {{ .Values.messagebroker.config.webUrl | default "https://volta-rpc.energyweb.org/" | quote }}
-  CACHE_SERVER_URL: {{ .Values.messagebroker.config.cacheServerUrl | default "https://identitycache-dev.energyweb.org/" | quote }}
-  MB_DID: {{ .Values.messagebroker.config.mbDid | quote }}
-  JWT_ISSUER: {{ .Values.messagebroker.config.jwt_issuer | quote }}
   BLOB_CONTAINER_NAME: {{ .Values.messagebroker.config.blob_storage_container | quote }}
   DDHUB_CONTEXT_URL: {{ .Values.messagebroker.config.context_url | quote }}
   MONGODB_POOL_SIZE_MAX: {{ .Values.messagebroker.config.mongodb_pool_size_max | quote }}
